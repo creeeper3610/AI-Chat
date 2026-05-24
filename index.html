@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>完全ローカルAIチャット</title>
+  <style>
+    body { font-family: sans-serif; max-width: 600px; margin: 20px auto; padding: 10px; }
+    #chat-log { border: 1px solid #ccc; height: 300px; overflow-y: scroll; padding: 10px; margin-bottom: 10px; background: #f9f9f9; }
+    #status { color: #666; font-size: 0.9em; margin-bottom: 10px; }
+    textarea { width: 100%; height: 60px; }
+    button { width: 100%; padding: 10px; background: #007bff; color: white; border: none; cursor: pointer; }
+    button:disabled { background: #ccc; }
+  </style>
+</head>
+<body>
+
+  <h1>ブラウザ完結型 AIチャット</h1>
+  
+  <!-- 1. ダウンロードや処理状況を表示するエリア -->
+  <div id="status">AIを初期化中...（初回は数GBのダウンロードが発生します）</div>
+  
+  <!-- 2. チャット履歴表示エリア -->
+  <div id="chat-log"></div>
+  
+  <!-- 3. 入力エリア -->
+  <textarea id="user-input" placeholder="メッセージを入力してください..." disabled></textarea>
+  <button id="send-btn" disabled>送信</button>
+
+  <!-- WebLLMライブラリをCDN経由で読み込む -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>
